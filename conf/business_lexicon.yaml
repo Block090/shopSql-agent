@@ -1,0 +1,55 @@
+version: "2026-07-20-v1"
+
+metrics:
+  订单数:
+    terms: [订单数, 订单量, 订单数量, 下单数, 成交订单数]
+  GMV:
+    terms: [GMV, 成交总额, 订单总额, 销售额, 消费金额]
+  销量:
+    terms: [销量, 销售数量, 购买数量, 件数, 总销量]
+  AOV:
+    terms: [AOV, 客单价, 平均订单金额, 平均客单价]
+
+columns:
+  fact_order.order_id:
+    terms: [订单数, 订单量, 订单数量, 下单数, 成交订单数]
+  fact_order.order_amount:
+    terms: [GMV, 成交总额, 订单总额, 销售额, 消费金额]
+  fact_order.order_quantity:
+    terms: [销量, 销售数量, 购买数量, 件数]
+  dim_date.date_id:
+    terms: [每天, 每日, 按日, 日期, 日趋势]
+  dim_date.year:
+    terms: [年份, 全年, 年度]
+  dim_date.quarter:
+    terms: [季度, 第一季度, 第二季度, 第三季度, 第四季度]
+  dim_date.month:
+    terms: [每月, 月度, 按月, 月趋势, 月份, 月]
+  dim_customer.gender:
+    terms: [女性, 男性, 性别]
+  dim_customer.member_level:
+    terms: [会员等级, 黄金会员, 金卡会员, 白银会员, 普通会员]
+  dim_product.category:
+    terms: [品类, 类目, 商品类别, 分类]
+  dim_product.product_name:
+    terms: [商品, 商品名称, 产品]
+  dim_product.brand:
+    terms: [品牌, 品牌名称]
+  dim_region.region_name:
+    terms: [大区, 地区, 区域]
+  dim_region.province:
+    terms: [省份, 省]
+
+unsupported_concepts:
+  主播:
+    terms: [主播, 达人]
+  直播间:
+    terms: [直播间, 直播渠道]
+  直播转化率:
+    terms: [直播间转化率, 直播转化率]
+  线下门店:
+    terms: [线下门店, 门店]
+  商圈:
+    terms: [商圈]
+  客流量:
+    terms: [客流量, 到店人数]

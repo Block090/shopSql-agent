@@ -1,0 +1,33 @@
+default_user: demo_admin
+
+users:
+  demo_admin:
+    role: admin
+    allowed_tables: []
+    allowed_metrics: []
+    denied_columns:
+      - customer_phone
+      - customer_name
+      - customer_address
+    data_scope: {}
+
+  region_east:
+    role: region_operator
+    allowed_tables:
+      - fact_order
+      - dim_region
+      - dim_date
+      - dim_product
+      - dim_customer
+    allowed_metrics:
+      - GMV
+      - 订单数
+      - AOV
+      - 销量
+    denied_columns:
+      - customer_phone
+      - customer_name
+      - customer_address
+    data_scope:
+      region_name:
+        - 华东
